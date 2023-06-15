@@ -1,7 +1,8 @@
 #include <stdio.h>
-/*
-*Description : function that print out a quote to stout.
-*/ 
+/**
+ *Description : function that print out a quote to stout.
+ *Return: 0 if success.
+ */ 
 int main(void)
 {
 	puts("\"Programming is like building a multilingual puzzle");
