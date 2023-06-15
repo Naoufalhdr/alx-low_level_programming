@@ -1,6 +1,7 @@
 #include <stdio.h>
 /**
- * Description: Prints out a quote to stdout.
+ * Description: main - Prints out a quote to stdout.
+ * Return: 0 if success.
  */
 int main(void)
 {
