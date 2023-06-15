@@ -1,7 +1,7 @@
 #include <stdio.h>
-/*
- * main - Prints out the sizes of different data type in bytes.
- * Return: 0 if succes.
+/**
+ * main - Prints out the sizes of different data types in bytes.
+ * Return: 0 if success.
  */
 int main(void)
 {
