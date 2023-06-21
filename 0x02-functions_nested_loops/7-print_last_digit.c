@@ -4,7 +4,7 @@
  * @i : an integer whose last digit is to be printed.
  * Return: the value of the last digit.
  */
-int print_last_digit(int i)
+int print_last_digit(long i)
 {
 	if (i < 0)
 		i *= -1;
