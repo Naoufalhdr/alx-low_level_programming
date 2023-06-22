@@ -6,9 +6,9 @@
  * Return: nothing.
  */
 
-void print_number(long int n)
+void print_number(int n)
 {
-	long int divisor, digit;
+	unsigned int divisor, digit;
 
 	divisor = 1;
 
