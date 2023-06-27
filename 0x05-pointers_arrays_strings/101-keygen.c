@@ -11,8 +11,9 @@ int main(void)
 {
 	srand(time(NULL));
 
-	int r;
-	int i;
+	int r, i;
+	
+	r = 0;
 
 	for (i = 0; i < 25; i++)
 	{
