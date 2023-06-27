@@ -13,12 +13,10 @@ int main(void)
 
 	srand(time(NULL));
 
-	for (i = 0; i < 33; i++)
+	for (i = 0; i < 15; i++)
 	{
 		r = rand() % 127;
 		printf("%c", r);
-		if (i == 32)
-		printf("\n");
 	}
 	return (0);
 }
