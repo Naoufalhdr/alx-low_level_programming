@@ -13,11 +13,11 @@ int main(void)
 
 	srand(time(NULL));
 
-	for (i = 0; i < 25; i++)
+	for (i = 0; i < 50; i++)
 	{
 		r = rand() % 94 + 33;
 		printf("%c", r);
-		if (i == 24)
+		if (i == 49)
 		printf("\n");
 	}
 	return (0);
