@@ -20,6 +20,7 @@ void print_number(int n)
 	}
 
 	temp = result;
+
 	while (temp <= -10)
 	{
 		exponent *= 10;
