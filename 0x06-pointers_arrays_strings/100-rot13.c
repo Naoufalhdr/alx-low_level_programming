@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * rot13 - encodes a string using the "ROT13" code.
@@ -8,25 +9,19 @@
 
 char *rot13(char *str)
 {
-	char upper[] = "NOPQRSTUVWXYZABCDEFGHIJKLM";
-	char lower[] = "nopqrstuvwxyzabcdefghijklm";
-	int i;
+	char input[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char output[] ="NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	int i, j;
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		char c = str[i];
-
-		if (c >= 'A' && c <= 'Z')
+		for (j = 0; input[j] != '\0'; j++)
 		{
-			int delt = c - 'A';
-
-			str[i] = upper[delt];
-		}
-		else if (c >= 'a' && c <= 'z')
-		{
-			int delt = c - 'a';
-
-			str[i] = lower[delt];
+			if (str[i] == input[j])
+			{
+				str[i] = output[j];
+				break;
+			}
 		}
 	}
 	return (str);
