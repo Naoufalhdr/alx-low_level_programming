@@ -16,6 +16,9 @@ char *cap_string(char *str)
 
 	delt = 'a' - 'A';
 
+	if (str[0] >= 'a' && str[0] <= 'z')
+		str[0] -= delt;
+
 	while (str[i] != '\0')
 	{
 		for (j = 0; j < 13; j++)
