@@ -9,16 +9,16 @@
 char *cap_string(char *str)
 {
 	int i, j, delt;
-	char array[12] = {
+	char array[13] = {
 		' ', '\n',  ',', ';', '!', '?', '"',
-		'(', ')', '.', '\t', '}'};
+		'(', ')', '.', '{', '\t', '}'};
 	i = 0;
 
 	delt = 'a' - 'A';
 
 	while (str[i] != '\0')
 	{
-		for (j = 0; j < 12; j++)
+		for (j = 0; j < 13; j++)
 		{
 			if (str[i] == array[j])
 				if (str[i + 1] >= 'a' && str[i + 1] <= 'z')
