@@ -41,7 +41,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 
 	r[size_r] = '\0';
 
-	if (size_r == len_n1 || size_r == len_n2)
+	if (size_r <= len_n1 || size_r <= len_n2)
 		return (0);
 	else
 		return (&r[max]);
