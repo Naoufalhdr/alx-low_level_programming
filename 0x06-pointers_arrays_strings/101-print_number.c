@@ -8,7 +8,7 @@
 
 void print_number(int n)
 {
-	int unsigned num, temp;
+	unsigned int num, temp;
 	int i, size, power;
 
 	size = 0;
@@ -19,9 +19,9 @@ void print_number(int n)
 	if (n < 0)
 	{
 		_putchar('-');
-		num = temp = -n ;
+		num = temp = -n;
 	}
-	
+
 	while (temp / 10 > 0)
 	{
 		temp /= 10;
