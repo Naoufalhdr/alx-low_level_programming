@@ -36,10 +36,14 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 
 	if (remain != 0)
 		r[max] = remain + '0';
+	else
+		max += 1;
 
+	printf("\nmax = %d\n", max);
 	r[size_r] = '\0';
 
-	if (max < 0)
+	if (max == 0)
 		return (0);
-	return (&r[max]);
+	else
+		return (&r[max]);
 }
