@@ -8,23 +8,22 @@
 
 void print_number(int n)
 {
-	unsigned int num, temp;
+	unsigned int num, t;
 	int i, size, power;
 
 	size = 0;
 	power = 1;
-	num = n;
-	temp = n;
+	num = t = n;
 
 	if (n < 0)
 	{
 		_putchar('-');
-		num = temp = -n;
+		num = t = -n;
 	}
 
-	while (temp / 10 > 0)
+	while (t / 10 > 0)
 	{
-		temp /= 10;
+		t /= 10;
 		power *= 10;
 		size++;
 	}
