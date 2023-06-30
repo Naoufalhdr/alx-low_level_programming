@@ -7,8 +7,7 @@
 
 void print_number(int n)
 {
-	int num, t;
-	int i, size, power;
+	long num, t, i, size, power;
 
 	size = 0;
 	power = 1;
