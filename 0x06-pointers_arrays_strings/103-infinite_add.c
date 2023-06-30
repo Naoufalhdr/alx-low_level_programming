@@ -13,7 +13,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	int remain, i, j, len_n1, len_n2, max;
 
 	len_n1 = len_n2 = remain = sum = i = j = 0;
-	max = size_r -1;
+	max = size_r - 1;
 
 	while (n1[len_n1] != '\0')
 		j = len_n1++;
@@ -24,7 +24,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	{
 		int num1 = (i < 0) ? n1[i] - '0' : 0;
 		int num2 = (j < 0) ? n2[j] - '0' : 0;
-		
+
 		sum = num1 + num2 + remain;
 		remain = sum / 10;
 		r[max] = '0' + (sum % 10);
