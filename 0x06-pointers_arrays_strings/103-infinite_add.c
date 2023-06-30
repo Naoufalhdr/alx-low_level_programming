@@ -36,6 +36,8 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 
 	if (remain != 0)
 		r[max] = remain + '0';
+	else
+		max += 1;
 
 	r[size_r] = '\0';
 
