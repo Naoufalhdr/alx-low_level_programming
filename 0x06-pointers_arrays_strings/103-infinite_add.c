@@ -1,33 +1,53 @@
 #include "main.h"
-
+#include <stdio.h>
 /**
- * infinite_add - function with 4 arguments
- * @n1: char type pointer argument
- * @n2: char type pointer argument
- * @r: char type pointer argument
- * @size_r: int type argument
- *
- * Description: adds two numbers from string
- * Return: sum of two integers
+ * infinite_add - Adds two numbers represented as strings together.
+ * @n1: the first number as a string.
+ * @n2: the second number as a string.
+ * @r: The buffer to store the result.
+ * @size_r: a pointer to buffer where result is stored
+ * Return: return
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int count, count2;
+	int remain, sum, i, j;
+	int len_n1 = 0;
+	int len_n2 = 0;
+	int max = size_r - 1;
 
-	while (n1[count] != '\0')
-		count++;
-	while (n2[count2] != '\0')
-		count2++;
+	remain = i = j = 0;
 
-	*r = *(r + size_r);
-	while (n1[count] > 0 || n1[count2] > 0)
+	while (n1[len_n1] != '\0')
+		i = len_n1++;
+	while (n2[len_n2] != '\0')
+		j = len_n2++;
+
+	while (i >= 0 || j >= 0)
 	{
-		if (n1[count] + n2[count2] > 0)
-			*r = n1[count - 1] + n2[count2 - 1] + 1;
+		int num1, num2;
+
+		if (i < 0)
+			num1 = 0;
 		else
-			*r = n1[count] + n2[count2];
-		count--;
-		count2--;
+			num1 = n1[i] - '0';
+		if (j < 0)
+			num2 = 0;
+		else
+			num2 = n2[j] - '0';
+		sum = num1 + num2 + remain;
+		remain = sum  / 10;
+		r[max] = '0' + (sum % 10);
+		i--;
+		j--;
+		max--;
 	}
-	return (r);
+	if (remain != 0)
+		r[max] = remain + '0';
+	else
+		max += 1;
+	r[size_r] = '\0';
+
+	if (max == 0)
+		return (0);
+	return (&r[max]);
 }
