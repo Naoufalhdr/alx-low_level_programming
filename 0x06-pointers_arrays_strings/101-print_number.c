@@ -7,28 +7,31 @@
 
 void print_number(int n)
 {
-	long num, t, i, size, power;
+	long length, result, i, temp, exponent;
 
-	size = 0;
-	power = 1;
-	num = t = n;
+	result = n;
+	exponent = length = 1;
 
-	if (n < 0)
+	if (result < 0)
 	{
+		result *= -1;
 		_putchar('-');
-		num = t = -n;
 	}
 
-	while (t / 10 > 0)
+	temp = result;
+	while (temp >= 10)
 	{
-		t /= 10;
-		power *= 10;
-		size++;
+		length++;
+		temp /= 10;
 	}
-	for (i = 0; i <= size; i++)
+
+	for (i = 1; i < length; i++)
+		exponent *= 10;
+
+	while (exponent > 1)
 	{
-		_putchar((num / power) + '0');
-		num %= power;
-		power /= 10;
+		_putchar((result / exponent) % 10 + '0');
+		exponent /= 10;
 	}
+	_putchar(result % 10 + '0');
 }
