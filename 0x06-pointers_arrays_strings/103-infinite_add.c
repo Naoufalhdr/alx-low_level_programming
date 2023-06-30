@@ -13,7 +13,8 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
 	int remain, i, j, k, len_n1, len_n2, max, sum;
 
-	len_n1 = len_n2 = remain = sum = i = j = k = 0;
+	len_n1 = len_n2 = remain = sum = i = j = 0;
+	k = 1;
 	max = size_r - 1;
 
 	while (n1[len_n1] != '\0')
@@ -32,6 +33,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		i--;
 		j--;
 		max--;
+		k++;
 	}
 
 	if (remain != 0)
@@ -39,10 +41,11 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	else
 		max += 1;
 
-	r[size_r] = '\0';
-
-	if (size_r <= len_n1 || size_r <= len_n2)
+	if (size_r <= k)
 		return (0);
 	else
+	{
+		r[size_r] = '\0';
 		return (&r[max]);
+	}	
 }
