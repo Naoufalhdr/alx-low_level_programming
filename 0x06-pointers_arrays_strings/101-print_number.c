@@ -7,7 +7,7 @@
 
 void print_number(int n)
 {
-	unsigned int num, t;
+	int num, t;
 	int i, size, power;
 
 	size = 0;
