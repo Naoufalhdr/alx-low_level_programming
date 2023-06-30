@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * print_number - Prints an integer value.
@@ -7,29 +8,30 @@
 
 void print_number(int n)
 {
-	int result, temp, exponent;
+	int unsigned num, temp;
+	int i, size, power;
 
-	exponent = 1;
+	size = 0;
+	power = 1;
+	num = n;
+	temp = n;
 
-	if (n >= 0)
-		result = -n;
-	else
+	if (n < 0)
 	{
-		result = n;
 		_putchar('-');
+		num = temp = -n ;
 	}
-
-	temp = result;
-
-	while (temp <= -10)
+	
+	while (temp / 10 > 0)
 	{
-		exponent *= 10;
 		temp /= 10;
+		power *= 10;
+		size++;
 	}
-
-	while (exponent >= 1)
+	for (i = 0; i <= size; i++)
 	{
-		_putchar(((result / exponent) % 10) * -1 + '0');
-		exponent /= 10;
+		_putchar((num / power) + '0');
+		num %= power;
+		power /= 10;
 	}
 }
