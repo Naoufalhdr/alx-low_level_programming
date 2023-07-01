@@ -16,7 +16,7 @@ void print_buffer(char *b, int size)
 	position = 0;
 	end = 10;
 
-	while (size >= 0)
+	while (size > 0)
 	{
 		printf("%08x:", position);
 		for (i = position; i < end; i++)
