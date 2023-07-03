@@ -7,7 +7,7 @@
 
 char *getPassword()
 {
-	return ("jennieandjayloveasm=");
+	return ("abc123");
 }
 
 /**
