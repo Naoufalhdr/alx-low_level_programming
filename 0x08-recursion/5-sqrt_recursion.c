@@ -13,7 +13,7 @@ int _sqrt_helper(int n, int base)
 		return (n);
 	if (n * n > base)
 		return (-1);
-	return (helper(n + 1, base));
+	return (_sqrt_helper(n + 1, base));
 }
 
 /**
