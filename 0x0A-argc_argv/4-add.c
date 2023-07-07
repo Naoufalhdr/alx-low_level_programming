@@ -13,11 +13,9 @@ int main(int argc, char *argv[])
 	int i;
 	int res = 0;
 
-	if (argc < 1)
-		printf("0\n");
-	if (argc > 1)
+	if (argc > 2)
 	{
-		for (i = 1; i < argc; i++)
+		for (i = 2; i < argc; i++)
 		{
 			if (*argv[i] > '0' && *argv[i] < '9')
 				res += atoi(argv[i]);
@@ -27,7 +25,9 @@ int main(int argc, char *argv[])
 				return (1);
 			}
 		}
+		printf("%d\n", res);
 	}
-	printf("%d\n", res);
+	else
+		printf("0\n");
 	return (0);
 }
