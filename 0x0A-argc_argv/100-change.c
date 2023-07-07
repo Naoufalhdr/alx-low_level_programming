@@ -18,11 +18,11 @@ int main(int argc, char *argv[])
 	int i, j, temp, cents, count;
 
 	count = 0;
-	cents = atoi(argv[1]);
 	temp = 0;
 
 	if (argc == 2)
 	{
+		cents = atoi(argv[1]);
 		if (cents > 0)
 		{
 			for (j = 0; element[j]; j++)
