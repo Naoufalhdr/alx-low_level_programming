@@ -18,14 +18,15 @@ int main(int argc, char *argv[])
 	{
 		for (i = 1; i < argc; i++)
 		{
-			char *arg = argv[i];
-			for (j = 0; arg[j]; j++)
+			char *element = argv[i];
+
+			for (j = 0; element[j]; j++)
 			{
-				if (!isdigit(arg[j]))
+				if (!isdigit(element[j]))
 				{
-                                	printf("Error\n");
-                                	return (1);
-	                        }
+					printf("Error\n");
+					return (1);
+				}
 			}
 			res += atoi(argv[i]);
 		}
