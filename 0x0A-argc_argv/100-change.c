@@ -14,8 +14,8 @@
 int main(int argc, char *argv[])
 {
 	int units[] = {25, 10, 5, 2, 1};
-	char *element = argv[1];
-	int i, j, temp, cents, count;
+	/*char *element = argv[1];*/
+	int i, temp, cents, count;
 
 	count = 0;
 	temp = 0;
@@ -25,14 +25,14 @@ int main(int argc, char *argv[])
 		cents = atoi(argv[1]);
 		if (cents > 0)
 		{
-			for (j = 0; element[j]; j++)
+		/*	for (j = 0; element[j]; j++)
 			{
 				if (!isdigit(element[j]))
 				{
 					printf("Error\n");
 					return (1);
 				}
-			}
+			}*/
 			for (i = 0; i < 5; i++)
 			{
 				temp = cents / units[i];
