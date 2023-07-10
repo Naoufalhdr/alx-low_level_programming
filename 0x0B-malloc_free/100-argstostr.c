@@ -19,6 +19,9 @@ char *argstostr(int ac, char **av)
 
 	len = index = 0;
 
+	if (ac == 0 || av == NULL)
+		return (NULL);
+
 	for (i = 0; i < ac; i++)
 	{
 		char *current = av[i];
