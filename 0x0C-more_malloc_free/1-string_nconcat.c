@@ -28,18 +28,17 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s1_len++;
 	while (s2[s2_len] != '\0')
 		s2_len++;
-	if (s2_len >= n)
-		s2_len = n;
+	if (n >= s2_len)
+		n = s2_len;
 
-	size = s1_len + s2_len + 1;
+	size = s1_len + n + 1;
 	str = malloc(size * sizeof(char));
-	printf("size = %d, s2_len = %d\n", size, s2_len);
 	if (str == NULL)
 		return (NULL);
 
 	for (i = 0; i < s1_len; i++)
 		str[i] = s1[i];
-	for (i = 0; i < s2_len; i++)
+	for (i = 0; i < n; i++)
 		str[i + s1_len] = s2[i];
 	str[i + s1_len] = '\0';
 
