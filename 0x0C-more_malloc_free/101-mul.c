@@ -28,6 +28,15 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
+	for (i = 1; i < 3; i++)
+	{
+		if (_isdigit(argv[i]))
+		{
+			printf("Error\n");
+			exit(98);
+		}
+	}
+
 	len1 = _strlen(argv[1]);
 	len2 = _strlen(argv[2]);
 	max_len = len1 + len2 - 1;
