@@ -23,18 +23,12 @@ int main(int argc, char *argv[])
 	int i;
 
 	if (argc != 3)
-	{
-		printf("Error\n");
 		exit(98);
-	}
 
 	for (i = 1; i < 3; i++)
 	{
 		if (_isdigit(argv[i]))
-		{
-			printf("Error\n");
 			exit(98);
-		}
 	}
 
 	len1 = _strlen(argv[1]);
