@@ -22,12 +22,6 @@ int main(int argc, char *argv[])
 	int *digits1, *digits2, *product;
 	int i;
 
-	if (argc != 3)
-	{
-		printf("Error\n");
-		exit(98);
-	}
-
 	for (i = 1; i < 3; i++)
 	{
 		if (_isdigit(argv[i]))
