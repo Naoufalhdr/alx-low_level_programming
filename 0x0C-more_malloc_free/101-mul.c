@@ -23,12 +23,18 @@ int main(int argc, char *argv[])
 	int i;
 
 	if (argc != 3)
+	{
+		printf("Error\n");
 		exit(98);
+	}
 
 	for (i = 1; i < 3; i++)
 	{
 		if (_isdigit(argv[i]))
+		{
+			printf("Error\n");
 			exit(98);
+		}
 	}
 
 	len1 = _strlen(argv[1]);
@@ -43,8 +49,8 @@ int main(int argc, char *argv[])
 		max_len--;
 
 	for (i = max_len; i >= 0; i--)
-		printf("%d", product[i]);
-	printf("\n");
+		_putchar(product[i] + '0');
+	_putchar('\n');
 	free(digits1);
 	free(digits2);
 	free(product);
