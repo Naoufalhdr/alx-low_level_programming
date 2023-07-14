@@ -49,8 +49,8 @@ int main(int argc, char *argv[])
 		max_len--;
 
 	for (i = max_len; i >= 0; i--)
-		_putchar(product[i] + '0');
-	_putchar('\n');
+		printf("%d", product[i]);
+	printf("\n");
 	free(digits1);
 	free(digits2);
 	free(product);
