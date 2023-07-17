@@ -2,6 +2,25 @@
 #include <stdlib.h>
 
 /**
+ * _strcpy - copies a string from source to destination
+ * @dest: a pointer to the destination string
+ * @src: a pointer to the source string
+ *
+ * Return: a pointer to the destination string
+ */
+
+char *_strcpy(char *dest, char *src)
+{
+	int i;
+
+	for (i = 0; src[i] != '\0'; i++)
+		dest[i] = src[i];
+	dest[i] = '\0';
+
+	return (dest);
+}
+
+/**
  * new_dog - creates a new dod struct of type dog.
  * @name: a pointer to the name of the dog.
  * @age: age of the dog.
@@ -15,7 +34,6 @@ dog_t *new_dog(char *name, float age, char *owner)
 	dog_t *new_dog;
 	int name_len = 0;
 	int owner_len = 0;
-	int i;
 
 	if (name == NULL || owner == NULL)
 		return (NULL);
@@ -34,10 +52,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (new_dog->name == NULL || new_dog->owner == NULL)
 		return (NULL);
 
-	for (i = 0; name[i] != '\0'; i++)
-		new_dog->name[i] = name[i];
-	for (i = 0; owner[i] != '\0'; i++)
-		new_dog->owner[i] = owner[i];
+	_strcpy(new_dog->name, name);
+	_strcpy(new_dog->owner, owner);
 	new_dog->age = age;
 
 	return (new_dog);
