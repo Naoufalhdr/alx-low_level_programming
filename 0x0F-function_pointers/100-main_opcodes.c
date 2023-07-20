@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 	ptr = (unsigned char *)main;
 
 	for (i = 0; i < number_bytes; i++)
-		printf("%02x ", ptr[i]);
+		printf("%02hhx ", ptr[i]);
 	printf("\n");
 
 	return (0);
