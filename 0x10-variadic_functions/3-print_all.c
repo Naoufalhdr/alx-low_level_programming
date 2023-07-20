@@ -20,7 +20,7 @@ void print_all(const char * const format, ...)
 	va_start(arg_list, format);
 	separator = "";
 
-	while (format[i])
+	while (format[i] && format)
 	{
 		format_type = format[i];
 
