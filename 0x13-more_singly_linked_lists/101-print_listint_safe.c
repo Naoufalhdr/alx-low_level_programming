@@ -8,24 +8,37 @@
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	const listint_t *current;
-	size_t count;
-
-	current = head;
-	count = 0;
+	const listint_t *current = head;
+	size_t count = 0;
+	const listint_t **address_set = NULL;
+	size_t set_size = 0, i;
 
 	while (current != NULL)
 	{
-		printf("[%p] %d\n", (void *)current, current->n);
-		count++;
-
-		if (current <= current->next)
+		for (i = 0; i < set_size; i++)
 		{
-			printf("-> [%p] %d\n", (void *)current->next, current->next->n);
+			if (current == address_set[i])
+			{
+				printf("-> [%p] %d\n", (void *)current, current->n);
+				free(address_set);
+				exit(98);
+			}
+		}
+
+		address_set = realloc(address_set, (set_size + 1) * sizeof(*address_set));
+		if (address_set == NULL)
+		{
+			printf("Memory allocation failed.\n");
 			exit(98);
 		}
-		current = current->next;
+			address_set[set_size] = current;
+			set_size++;
+
+			printf("[%p] %d\n", (void *)current, current->n);
+			current = current->next;
+			count++;
 	}
 
+	free(address_set);
 	return (count);
 }
