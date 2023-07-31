@@ -21,7 +21,7 @@ size_t print_listint_safe(const listint_t *head)
 			{
 				printf("-> [%p] %d\n", (void *)current, current->n);
 				free(address_set);
-				exit(98);
+				return (count);
 			}
 		}
 
@@ -31,12 +31,12 @@ size_t print_listint_safe(const listint_t *head)
 			printf("Memory allocation failed.\n");
 			exit(98);
 		}
-			address_set[set_size] = current;
-			set_size++;
+		address_set[set_size] = current;
+		set_size++;
 
-			printf("[%p] %d\n", (void *)current, current->n);
-			current = current->next;
-			count++;
+		printf("[%p] %d\n", (void *)current, current->n);
+		current = current->next;
+		count++;
 	}
 
 	free(address_set);
