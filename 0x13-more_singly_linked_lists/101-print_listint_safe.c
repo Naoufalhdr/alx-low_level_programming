@@ -32,7 +32,7 @@ size_t print_listint_safe(const listint_t *head)
 	}
 
 	if (current == after)
-		return (0);
+		exit(98);
 
 	while (current != NULL)
 	{
