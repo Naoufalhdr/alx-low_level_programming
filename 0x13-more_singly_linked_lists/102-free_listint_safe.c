@@ -16,15 +16,15 @@ size_t free_listint_safe(listint_t **h)
 
 	while (current != NULL)
 	{
-		if (current <= current->next)
-		{
-			*h = NULL;
-			return (count);
-		}
 		tmp = current->next;
 		free(current);
 		count++;
 		current = tmp;
+		if (current == *h)
+		{
+			*h = NULL;
+			return (count);
+		}
 	}
 
 	*h = NULL;
