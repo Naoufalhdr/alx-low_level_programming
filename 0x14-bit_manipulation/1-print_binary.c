@@ -8,19 +8,15 @@
  */
 void print_binary(unsigned long int n)
 {
-	unsigned long int bit_position;
-	int flag;
+	int bit_position, flag;
 
 	if (n == 0)
-	{
 		_putchar('0');
-		return;
-	}
 
-	bit_position = sizeof(unsigned long int) * 8 - 1;
+	bit_position = sizeof(n) * 8 - 1;
 	flag = 1;
 
-	while (bit_position >= 1)
+	while (bit_position >= 0)
 	{
 		if (n & (1UL << bit_position))
 		{
