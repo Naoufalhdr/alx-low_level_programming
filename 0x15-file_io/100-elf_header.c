@@ -20,7 +20,7 @@ void print_magic(unsigned char magic[16])
 
 void print_class(unsigned char elf_class)
 {
-	printf("  %-36s", "Class:");
+	printf("  %-35s", "Class:");
 	if (elf_class == 1)
 		printf("ELF32\n");
 	else if (elf_class == 2)
@@ -31,7 +31,7 @@ void print_class(unsigned char elf_class)
 
 void print_data(unsigned char elf_data)
 {
-	printf("  %-36s", "Data:");
+	printf("  %-35s", "Data:");
 	if (elf_data == 1)
 		printf("2's complement, little endian\n");
 	else if (elf_data == 2)
@@ -42,13 +42,13 @@ void print_data(unsigned char elf_data)
 
 void print_version(unsigned char elf_version)
 {
-	printf("  %-36s", "Version:");
+	printf("  %-35s", "Version:");
 	printf("%d (current)\n", elf_version);
 }
 
 void print_os_abi(unsigned char elf_os_abi)
 {
-	printf("  %-36s", "OS/ABI:");
+	printf("  %-35s", "OS/ABI:");
 	if (elf_os_abi == 0)
 		printf("UNIX - System V\n");
 	else if (elf_os_abi == 1)
@@ -87,13 +87,13 @@ void print_os_abi(unsigned char elf_os_abi)
 
 void print_abi_version(unsigned char elf_abi_version)
 {
-	printf("  %-36s", "ABI version:");
+	printf("  %-35s", "ABI Version:");
 	printf("%d\n", elf_abi_version);
 }
 
 void print_type(unsigned char elf_type)
 {
-	printf("  %-36s", "Type:");
+	printf("  %-35s", "Type:");
 	if (elf_type == 0)
 		printf("NONE (No file type)\n");
 	else if (elf_type == 1)
@@ -141,7 +141,7 @@ int main(int argc, char *argv[])
 	print_type(elf_header[16]);
 	for (i = 0; i < 8; i++)
 		entry_point |= ((uint64_t)elf_header[0x18 + i]) << (i * 8);
-	printf("  %-36s", "Entry point address:");
+	printf("  %-35s", "Entry point address:");
 	printf("0x%lx\n", entry_point);
 	close(file);
 	return (0);
