@@ -1,7 +1,26 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <fcntl.h>
+#include <stdlib.h>
 #include <unistd.h>
+
+/**
+ * check_elf - checks if a file is an ELF file.
+ * @elf: an array containing the first 4 bytes.
+ */
+void check_elf(unsigned char elf[])
+{
+	int i;
+
+	for (i = 0; i < 4; i++)
+	{
+		if (elf[i] != 127 && elf[i] != 'E' && elf[i] != 'L' && elf[i] != 'F')
+		{
+			dprintf(STDERR_FILENO, "Error: Not an ELF file.\n");
+			exit(98);
+		}
+	}
+}
 
 /**
  * print_magic - prints the magic bytes of the ELF header.
@@ -166,6 +185,7 @@ int main(int argc, char *argv[])
 		close(file);
 		return (1);
 	}
+	check_elf(elf_header);
 	printf("ELF Header:\n");
 	print_magic(elf_header);
 	print_class(elf_header[4]);
