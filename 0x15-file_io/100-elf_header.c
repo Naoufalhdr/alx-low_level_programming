@@ -3,6 +3,10 @@
 #include <fcntl.h>
 #include <unistd.h>
 
+/**
+ * print_magic - prints the magic bytes of the ELF header.
+ * @magic: an array containing the magic bytes.
+ */
 void print_magic(unsigned char magic[16])
 {
 	int i;
@@ -18,6 +22,10 @@ void print_magic(unsigned char magic[16])
 	printf("\n");
 }
 
+/**
+ * print_class - Prints the class field of the ELF header.
+ * @elf_class: The class field value.
+ */
 void print_class(unsigned char elf_class)
 {
 	printf("  %-35s", "Class:");
@@ -26,9 +34,13 @@ void print_class(unsigned char elf_class)
 	else if (elf_class == 2)
 		printf("ELF64\n");
 	else
-		printf("<unknown: %x>\n", elf_class);
+		printf("none\n");
 }
 
+/**
+ * print_data - Prints the data field of the ELF header.
+ * @elf_data: The data field value.
+ */
 void print_data(unsigned char elf_data)
 {
 	printf("  %-35s", "Data:");
@@ -40,62 +52,78 @@ void print_data(unsigned char elf_data)
 		printf("<unknown : %x>\n", elf_data);
 }
 
+/**
+ * print_version - Prints the version field of the ELF header.
+ * @elf_version: The version field value.
+ */
 void print_version(unsigned char elf_version)
 {
 	printf("  %-35s", "Version:");
 	printf("%d (current)\n", elf_version);
 }
 
+/**
+ * print_os_abi - Prints the OS/ABI field of the ELF header.
+ * @elf_os_abi: The OS/ABI field value.
+ */
 void print_os_abi(unsigned char elf_os_abi)
 {
 	printf("  %-35s", "OS/ABI:");
 	if (elf_os_abi == 0)
 		printf("UNIX - System V\n");
 	else if (elf_os_abi == 1)
-		printf("HP-UX\n");
+		printf("UNIX - HP-UX\n");
 	else if (elf_os_abi == 2)
 		printf("UNIX - NetBSD\n");
 	else if (elf_os_abi == 3)
 		printf("UNIX - Linux\n");
 	else if (elf_os_abi == 4)
-		printf("GNU Hurd\n");
+		printf("UNIX - GNU Hurd\n");
 	else if (elf_os_abi == 5)
 		printf("UNIX - Solaris\n");
 	else if (elf_os_abi == 6)
-		printf("AIX\n");
+		printf("UNIX - AIX\n");
 	else if (elf_os_abi == 7)
-		printf("IRIX\n");
+		printf("UNIX - IRIX\n");
 	else if (elf_os_abi == 8)
-		printf("FreeBSD\n");
+		printf("UNIX - FreeBSD\n");
 	else if (elf_os_abi == 9)
-		printf("OpenBSD\n");
+		printf("UNIX - OpenBSD\n");
 	else if (elf_os_abi == 10)
-		printf("OpenVMS\n");
+		printf("UNIX - OpenVMS\n");
 	else if (elf_os_abi == 11)
-		printf("NonStop Kernel\n");
+		printf("UNIX - NonStop Kernel\n");
 	else if (elf_os_abi == 12)
-		printf("AROS\n");
+		printf("UNIX - AROS\n");
 	else if (elf_os_abi == 13)
-		printf("Fenix OS\n");
+		printf("UNIX - Fenix OS\n");
 	else if (elf_os_abi == 14)
-		printf("CloudABI\n");
+		printf("UNIX - CloudABI\n");
 	else if (elf_os_abi == 15)
-		printf("OpenVOS\n");
+		printf("UNIX - OpenVOS\n");
 	else
 		printf("<unknown: %x>\n", elf_os_abi);
 }
 
+/**
+ * print_abi_version - Prints the ABI version field of the ELF header.
+ * @elf_abi_version: The ABI version field value.
+ */
 void print_abi_version(unsigned char elf_abi_version)
 {
 	printf("  %-35s", "ABI Version:");
 	printf("%d\n", elf_abi_version);
 }
 
+/**
+ * print_type - Prints the type field of the ELF header.
+ * @elf_type: The type field value.
+ */
 void print_type(unsigned char elf_type)
 {
 	printf("  %-35s", "Type:");
 	if (elf_type == 0)
-		printf("NONE (No file type)\n");
+		printf("NONE (None)\n");
 	else if (elf_type == 1)
 		printf("REL (Relocatable file)\n");
 	else if (elf_type == 2)
@@ -105,9 +133,16 @@ void print_type(unsigned char elf_type)
 	else if (elf_type == 4)
 		printf("CORE (Core file)\n");
 	else
-		printf("<unknown: %x\n", elf_type);
+		printf("<unknown: %x>\n", elf_type);
 }
 
+/**
+ * main - displays the information contained in the ELF header at
+ *        the start of an ELF file.
+ * @argc: The number of command-line arguments.
+ * @argv: An array of strings representing the command-line arguments.
+ * Return: 0 on success, 1 on error.
+ */
 int main(int argc, char *argv[])
 {
 	int file, i;
