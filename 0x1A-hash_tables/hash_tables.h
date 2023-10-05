@@ -48,5 +48,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value);
 char *hash_table_get(const hash_table_t *ht, const char *key);
 /* function that print a hash table*/
 void hash_table_print(const hash_table_t *ht);
+/* function that deletes a hash table */
+void hash_table_delete(hash_table_t *ht);
 
 #endif /* HASH_TABLES_H */
