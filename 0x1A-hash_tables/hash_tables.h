@@ -35,9 +35,16 @@ typedef struct hash_table_s
 } hash_table_t;
 
 /* Functions Protoypes */
+
+/* function that creates a hash table. */
 hash_table_t *hash_table_create(unsigned long int size);
+/* hash function implementing the djb2 algorithm. */
 unsigned long int hash_djb2(const unsigned char *str);
+/* functions that gives you the index of a key */
 unsigned long int key_index(const unsigned char *key, unsigned long int size);
+/* function that adds an element to the hash table */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value);
+/* functions that retrieves a value associated with a key*/
+char *hash_table_get(const hash_table_t *ht, const char *key);
 
 #endif /* HASH_TABLES_H */
